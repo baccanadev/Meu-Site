@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baccana Forms</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    background:
+    radial-gradient(circle at top right, rgba(139,92,246,.18), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(139,92,246,.12), transparent 40%),
+    #0a0a0f;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:inherit;
+}
+
+.logo a:visited{
+    color:inherit;
+}
+
+.logo img{
+    height:55px;
+    width:auto;
+}
+
+.logo span{
+    font-size:1.4rem;
+    font-weight:700;
+    color:#a855f7;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:rgba(10,10,15,.75);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+    z-index:1000;
+}
+
+.contact-section {
+    padding:140px 20px 80px;
+}
+
+.contact-container {
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    padding:40px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.contact-container h2 {
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.contact-container p {
+    text-align:center;
+    opacity:0.8;
+    margin-bottom:30px;
+}
+
+#contactForm {
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.05);
+    color:white;
+    font-size:15px;
+}
+
+#contactForm textarea {
+    resize:vertical;
+}
+
+#contactForm button {
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+#contactForm button:hover {
+    transform:translateY(-2px);
+}
+
+#status {
+    text-align:center;
+    margin-top:10px;
+}
+
+select option {
+    background-color: #1a1a25;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="shopbaccana.html#home">
+            <img src="dragon3d.png" alt="Logo">
+            <span>BACCANA</span>
+        </a>
+    </div>
+</nav>
+
+<section class="contact-section">
+    <div class="contact-container">
+        <h2>Formulário Baccana</h2>
+        <p>Ajude o projeto Baccana e a Rede Banz</p>
+
+<form id="contactForm"
+      action="https://formsubmit.co/leocostohm@gmail.com"
+      method="POST">
+
+    <input type="text" id="nick" name="nick" placeholder="Seu nick do Discord" required>
+
+    <input type="text" id="rede" name="rede_social" placeholder="Rede social (opcional)">
+
+    <select id="servico" name="servico" required>
+        <option value="">Selecione um serviço</option>
+        <option>Divulgação</option>
+        <option>Atendimento</option>
+        <option>Dev Ajudante</option>
+    </select>
+
+    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Descreva suas habilidades..." required></textarea>
+
+    <button type="submit">
+        Enviar Solicitação
+    </button>
+
+    <input type="hidden" name="_subject" value="Nova Solicitação - Baccana Studio">
+    <input type="hidden" name="_captcha" value="false">
+
+</form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="contact.js"></script>
+
+</body>
+</html>
